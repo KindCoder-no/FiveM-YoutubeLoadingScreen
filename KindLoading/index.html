@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <!-- JavaScript / jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<body>
+    <div id="audioelement">
+
+    </div>
+    <div class="video-background" id="background">
+      
+    </div>
+    <div id="app">
+      <div id="wrapper">
+          <h1 class="glitch" data-text="
+          KindFiveM">KindFiveM</h1>
+          <span class="sub"><b>ROLEPLAY</b></span>
+      </div>
+      <div class="wrapper-loadingbar">
+          <div class="loadingbar-text"></div>
+          <div class="loadingbar-bar"><div class="loadingbar-fill"></div></div>
+      </div>
+
+    </div>
+<script type="text/javascript">
+    // CHANGE THIS ARRAY WITH OWN YOUTUBE VIDEO ID
+    var loadings = [
+        "PWeDrQLVBPw", 
+        "ewJM7RsFu2A"
+    ]
+
+    // MESSAGES ARRAY
+    const messages = [
+        'TIP: This is a tip thingy',
+        'TIP: Edit this in the index.html file',
+    ]
+    //
+
+
+
+
+    const loading = loadings[  
+        Math.floor(Math.random() * loadings.length)
+    ]
+
+    
+
+    document.getElementById('background').innerHTML = `<iframe height="100%" width="130%" src="https://www.youtube.com/embed/${loading}?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=0" frameborder="0"></iframe>`;
+
+   
+
+    $(document).ready(function(){
+        var currentMessage = Math.floor(Math.random() * (messages.length));
+        $('.loadingbar-text').html(messages[currentMessage])
+
+
+        setInterval(() => {
+            currentMessage = Math.floor(Math.random() * (messages.length));
+            $('.loadingbar-text').fadeOut(500)
+            setTimeout(() => {
+                $('.loadingbar-text').html(messages[currentMessage])
+                $('.loadingbar-text').fadeIn(500)
+            }, 500)
+        }, 7000);
+    });
+</script>
+
+</body>
+</html>
