@@ -1,9 +1,15 @@
 # FiveM-YoutubeLoadingScreen
+
+## Features
+- Name and Subheader
+- Random YouTube background video (out of array)
+- Tip messages when loading
+
 ## Setup
-Upload the ``KindLoading`` folder to the resources folder, and add ``ensure KindLoading`` in you config
+Upload the ``KindLoading`` folder to the resources folder, and add ``ensure KindLoading`` in your config
 ## Config
 Open the ```index.html``` file and find the arrays.
-Youtube Videos:
+Youtube Videos
 ```
 // CHANGE THIS ARRAY WITH OWN YOUTUBE VIDEO ID
 var loadings = [
